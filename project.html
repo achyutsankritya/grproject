@@ -1,342 +1,136 @@
-
-
-<!-- ========================= index.html ========================= -->
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>APS EATS — Retro Café</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body class="retro">
-  <header class="site-header">
-    <div class="container header-inner">
-      <div class="brand">
-        <div class="badge">APS</div>
-        <div>
-          <h1 class="brand-title">APS EATS</h1>
-          <div class="brand-sub">Retro Café & Comfort Food</div>
-        </div>
-      </div>
-      <nav class="main-nav">
-        <a href="index.html">Home</a>
-        <a href="#menu">Menu</a>
-        <a href="#booking">Book</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <section class="hero container">
-      <div class="hero-left">
-        <h2>Warm flavors, classic vibes</h2>
-        <p class="lead">Welcome to <strong>APS EATS</strong> — where retro charm meets delicious comfort food. Cozy interiors, handcrafted coffee and plates that feel like home.</p>
-        <div class="hero-ctas">
-          <a class="btn primary" href="menu.html">View Menu</a>
-          <a class="btn outline" href="booking.html">Reserve a Table</a>
-        </div>
-        <div class="hero-highlights">
-          <div class="chip">Open: 11:00 — 22:30</div>
-          <div class="chip">Free Wi‑Fi</div>
-          <div class="chip">Home‑style Recipes</div>
-        </div>
-      </div>
-      <div class="hero-right">
-        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1200" alt="retro food" />
-      </div>
-    </section>
-
-    <section class="container specials">
-      <h3>Our Specials</h3>
-      <div class="cards">
-        <article class="card">
-          <img src="https://images.unsplash.com/photo-1542444459-db2f3b6a5f84?q=80&w=800" alt="pizza" />
-          <h4>Cheese Burst Pizza</h4>
-          <p class="muted">Loaded with molten cheese & house sauce</p>
-        </article>
-        <article class="card">
-          <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?q=80&w=800" alt="burger" />
-          <h4>Classic Chicken Burger</h4>
-          <p class="muted">Grilled patty, crisp lettuce and secret mayo</p>
-        </article>
-        <article class="card">
-          <img src="https://images.unsplash.com/photo-1542444459-db2f3b6a5f84?q=80&w=800" alt="pasta" />
-          <h4>Herbed Alfredo Pasta</h4>
-          <p class="muted">Creamy sauce, parmesan & herbs</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="container about">
-      <div class="about-inner">
-        <div class="about-text">
-          <h3>About APS EATS</h3>
-          <p class="muted">Founded with a love for comforting recipes and an old‑school café atmosphere. We handcraft every plate and roast our coffee in small batches.</p>
-          <ul class="about-list">
-            <li>Locally sourced ingredients</li>
-            <li>Signature retro desserts</li>
-            <li>Family friendly seating</li>
-          </ul>
-        </div>
-        <div class="about-image">
-          <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?q=80&w=800" alt="interior" />
-        </div>
-      </div>
-    </section>
-
-    <section class="container" id="contact">
-      <h3>Contact & Location</h3>
-      <p class="muted">MG Road • Pune • +91 90000 00000</p>
-      <div class="contact-grid">
-        <div class="contact-map">[Map Placeholder — add embed when ready]</div>
-        <div class="contact-hours">
-          <h4>Hours</h4>
-          <p class="muted">Mon — Sun: 11:00 — 22:30</p>
-          <h4>Follow Us</h4>
-          <p class="muted">@apseats</p>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">© 2025 APS EATS — Retro Café • Made with ❤️</div>
-  </footer>
-
-</body>
-</html>
-
-
-<!-- ========================= menu.html ========================= -->
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>APS EATS — Menu</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body class="retro">
-  <header class="site-header">
-    <div class="container header-inner">
-      <div class="brand">
-        <div class="badge">APS</div>
-        <div>
-          <h1 class="brand-title">APS EATS</h1>
-          <div class="brand-sub">Retro Café & Comfort Food</div>
-        </div>
-      </div>
-      <nav class="main-nav">
-        <a href="index.html">Home</a>
-        <a href="menu.html">Menu</a>
-        <a href="booking.html">Book</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
-  </header>
-
-  <main class="container menu-page">
-    <h2>Our Menu</h2>
-
-    <section class="menu-section">
-      <h3>Starters</h3>
-      <div class="menu-grid">
-        <div class="menu-card"><h4>Garlic Bread</h4><p class="muted">Buttery with herbs</p><div class="price">₹129</div></div>
-        <div class="menu-card"><h4>Spicy Potato Wedges</h4><p class="muted">Crispy with seasoning</p><div class="price">₹149</div></div>
-      </div>
-
-      <h3>Main Course</h3>
-      <div class="menu-grid">
-        <div class="menu-card"><h4>Cheese Burst Pizza</h4><p class="muted">Molten cheese, house tomato</p><div class="price">₹299</div></div>
-        <div class="menu-card"><h4>Classic Chicken Burger</h4><p class="muted">Grilled patty & secret sauce</p><div class="price">₹199</div></div>
-        <div class="menu-card"><h4>Herbed Alfredo Pasta</h4><p class="muted">Creamy parmesan sauce</p><div class="price">₹259</div></div>
-        <div class="menu-card"><h4>Charred Lemon Chicken</h4><p class="muted">Perfectly roasted</p><div class="price">₹420</div></div>
-      </div>
-
-      <h3>Desserts & Drinks</h3>
-      <div class="menu-grid">
-        <div class="menu-card"><h4>Brownie Shake</h4><p class="muted">Rich & chocolatey</p><div class="price">₹179</div></div>
-        <div class="menu-card"><h4>Cold Coffee</h4><p class="muted">Creamy & chilled</p><div class="price">₹149</div></div>
-        <div class="menu-card"><h4>Blue Lagoon</h4><p class="muted">Citrus mocktail</p><div class="price">₹169</div></div>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">© 2025 APS EATS — Retro Café</div>
-  </footer>
-</body>
-</html>
-
-
-<!-- ========================= booking.html ========================= -->
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>APS EATS — Booking</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body class="retro">
-  <header class="site-header">
-    <div class="container header-inner">
-      <div class="brand">
-        <div class="badge">APS</div>
-        <div>
-          <h1 class="brand-title">APS EATS</h1>
-          <div class="brand-sub">Retro Café & Comfort Food</div>
-        </div>
-      </div>
-      <nav class="main-nav">
-        <a href="index.html">Home</a>
-        <a href="menu.html">Menu</a>
-        <a href="booking.html">Book</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
-  </header>
-
-  <main class="container booking-page">
-    <h2>Reserve a Table</h2>
-
-    <form id="bookingForm" class="booking-form" autocomplete="off">
-      <div class="form-row">
-        <input type="text" id="name" name="name" placeholder="Full name" required />
-        <input type="tel" id="phone" name="phone" placeholder="Phone number" required />
-      </div>
-
-      <div class="form-row">
-        <input type="email" id="email" name="email" placeholder="Email (optional)" />
-        <input type="number" id="guests" name="guests" placeholder="Number of guests" min="1" required />
-      </div>
-
-      <div class="form-row">
-        <input type="date" id="date" name="date" required />
-        <input type="time" id="time" name="time" required />
-      </div>
-
-      <label for="seating">Seating preference</label>
-      <select id="seating" name="seating">
-        <option value="any">Any</option>
-        <option value="window">Window</option>
-        <option value="indoor">Indoor</option>
-        <option value="outdoor">Outdoor</option>
-      </select>
-
-      <label for="requests">Special requests</label>
-      <textarea id="requests" name="requests" rows="4" placeholder="Allergies, celebration notes..."></textarea>
-
-      <div style="display:flex;gap:12px;margin-top:14px;align-items:center">
-        <button class="btn primary" type="submit">Confirm Booking</button>
-        <button class="btn outline" type="reset">Reset</button>
-      </div>
-
-    </form>
-
-    <div id="bookingMsg" class="muted" style="margin-top:14px"></div>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">© 2025 APS EATS — Retro Café</div>
-  </footer>
-
-  <script>
-    // Basic client-side confirmation (no backend)
-    document.getElementById('bookingForm').addEventListener('submit', function(e){
-      e.preventDefault();
-      const name = document.getElementById('name').value.trim();
-      const date = document.getElementById('date').value;
-      const time = document.getElementById('time').value;
-      const guests = document.getElementById('guests').value;
-      if(!name || !date || !time || !guests){
-        alert('Please fill required fields');
-        return;
-      }
-      document.getElementById('bookingMsg').textContent = `Thanks ${name}! Your table for ${guests} on ${date} at ${time} is noted. We'll contact you if we need confirmation.`;
-      this.reset();
-    });
-  </script>
-</body>
-</html>
-
-
-<!-- ========================= style.css ========================= -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pomodoro Timer</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
-/* Retro Theme Styles - put this into style.css or keep as inline */
-:root{
-  --bg:#f5efe6; /* warm cream */
-  --card:#fff6ee;
-  --accent:#b85c38; /* burnt orange */
-  --accent-dark:#8a3f2a;
-  --muted:#6b5b4b;
-  --glass: rgba(0,0,0,0.03);
-}
-*{box-sizing:border-box}
-body.retro{background:linear-gradient(180deg,var(--bg),#efe6dc);color:var(--muted);font-family:Poppins,Arial,Helvetica,sans-serif}
-.container{max-width:1100px;margin:0 auto;padding:28px}
-.header-inner{display:flex;justify-content:space-between;align-items:center}
-.site-header{background:linear-gradient(90deg,#fff8f2,#fff8f2);box-shadow:0 6px 22px rgba(0,0,0,0.06);position:sticky;top:0;z-index:50}
-.brand{display:flex;gap:12px;align-items:center}
-.badge{width:56px;height:56px;border-radius:10px;background:linear-gradient(180deg,var(--accent),var(--accent-dark));color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-family:'Playfair Display',serif}
-.brand-title{font-family:'Playfair Display',serif;margin:0;font-size:22px}
-.brand-sub{font-size:13px;color:var(--muted)}
-.main-nav a{margin-left:18px;color:var(--muted);text-decoration:none;font-weight:600}
-.main-nav a:hover{color:var(--accent-dark)}
-
-/* HERO */
-.hero{display:grid;grid-template-columns:1fr 480px;gap:28px;padding:48px 0;align-items:center}
-.hero-left h2{font-family:'Playfair Display',serif;font-size:44px;margin-bottom:12px;color:var(--accent-dark)}
-.lead{font-size:16px;color:var(--muted);margin-bottom:18px}
-.btn{display:inline-block;padding:12px 18px;border-radius:8px;text-decoration:none;font-weight:700}
-.btn.primary{background:var(--accent);color:#fff}
-.btn.outline{background:transparent;border:2px solid var(--accent);color:var(--accent)}
-.hero-right img{width:100%;border-radius:14px;box-shadow:0 8px 36px rgba(0,0,0,0.12)}
-.chip{display:inline-block;background:var(--card);padding:8px 10px;border-radius:18px;margin-right:8px;font-size:13px;color:var(--muted)}
-
-/* CARDS */
-.specials .cards{display:flex;gap:18px;flex-wrap:wrap;margin-top:18px}
-.card{background:var(--card);padding:12px;border-radius:12px;flex:1;min-width:260px;box-shadow:0 8px 28px rgba(0,0,0,0.06);text-align:center}
-.card img{width:100%;height:160px;object-fit:cover;border-radius:8px;margin-bottom:10px}
-.card h4{margin:6px 0;color:var(--accent-dark)}
-.muted{color:rgba(107,91,75,0.9)}
-
-/* ABOUT */
-.about-inner{display:grid;grid-template-columns:1fr 360px;gap:24px;align-items:center}
-.about-image img{width:100%;border-radius:12px}
-.about-list{margin-top:10px;color:var(--muted);list-style:disc;padding-left:18px}
-
-/* MENU */
-.menu-page h2{font-family:'Playfair Display',serif;color:var(--accent-dark);text-align:center}
-.menu-section{margin-top:20px}
-.menu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:12px}
-.menu-card{background:var(--card);padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);position:relative}
-.menu-card h4{margin-bottom:6px;color:var(--accent-dark)}
-.price{position:absolute;right:12px;top:12px;font-weight:800;color:var(--accent)}
-
-/* BOOKING */
-.booking-page{max-width:760px;margin:0 auto}
-.booking-form{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,0.06)}
-.form-row{display:flex;gap:12px}
-.form-row input{flex:1;padding:12px;border-radius:8px;border:1px solid rgba(0,0,0,0.06)}
-select,textarea{width:100%;padding:12px;border-radius:8px;border:1px solid rgba(0,0,0,0.06)}
-
-/* CONTACT */
-.contact-grid{display:grid;grid-template-columns:1fr 320px;gap:18px;margin-top:12px}
-.contact-map{background:#fff;padding:28px;border-radius:10px;color:#333}
-.contact-hours{background:var(--card);padding:18px;border-radius:10px}
-
-/* FOOTER */
-.site-footer{background:#f7efe6;margin-top:36px;padding:18px;text-align:center;color:var(--muted)}
-
-
-@media (max-width:980px){.hero{grid-template-columns:1fr}.about-inner{grid-template-columns:1fr}.contact-grid{grid-template-columns:1fr}}
-@media (max-width:560px){.hero-right{display:none}.main-nav{display:none}}
+    body {
+        margin:0; padding:0;
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(135deg,#ff9a9e,#fad0c4);
+        display:flex; justify-content:center; align-items:center;
+        height:100vh; color:#333;
+    }
+    .container {
+        background: rgba(255,255,255,0.9);
+        padding:40px 50px;
+        border-radius:20px;
+        box-shadow:0 10px 25px rgba(0,0,0,0.2);
+        text-align:center;
+        width:300px;
+    }
+    h1 {
+        margin-bottom:20px;
+        font-size:28px;
+        color:#ff5e5e;
+    }
+    #timer {
+        font-size:60px;
+        margin:20px 0;
+        font-weight:700;
+    }
+    .buttons button {
+        padding:10px 20px;
+        margin:5px;
+        border:none;
+        border-radius:10px;
+        font-size:16px;
+        cursor:pointer;
+        font-weight:600;
+        transition:0.3s;
+    }
+    .buttons button:hover { opacity:0.8; }
+    .work { background:#ff5e5e; color:white; }
+    .short { background:#fbc531; color:white; }
+    .long { background:#4cd137; color:white; }
+    .control { background:#1e272e; color:white; }
+    select { margin-top:10px; padding:8px 12px; border-radius:8px; border:1px solid #ccc; }
 </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Pomodoro Timer</h1>
+    <div>
+        <label for="mode">Mode:</label>
+        <select id="mode">
+            <option value="work">Work - 25 min</option>
+            <option value="short">Short Break - 5 min</option>
+            <option value="long">Long Break - 15 min</option>
+        </select>
+    </div>
+    <div id="timer">25:00</div>
+    <div class="buttons">
+        <button class="control" id="start">Start</button>
+        <button class="control" id="pause">Pause</button>
+        <button class="control" id="reset">Reset</button>
+    </div>
+</div>
+
+<script>
+let timerDisplay = document.getElementById('timer');
+let startBtn = document.getElementById('start');
+let pauseBtn = document.getElementById('pause');
+let resetBtn = document.getElementById('reset');
+let modeSelect = document.getElementById('mode');
+
+let workTime = 25*60; 
+let shortTime = 5*60; 
+let longTime = 15*60; 
+
+let currentTime = workTime;
+let interval = null;
+
+function updateDisplay(){
+    let minutes = Math.floor(currentTime/60).toString().padStart(2,'0');
+    let seconds = (currentTime%60).toString().padStart(2,'0');
+    timerDisplay.textContent = `${minutes}:${seconds}`;
+}
+
+function startTimer(){
+    if(interval) return;
+    interval = setInterval(()=>{
+        if(currentTime>0){
+            currentTime--;
+            updateDisplay();
+        } else {
+            clearInterval(interval);
+            interval = null;
+            alert('Time is up!');
+        }
+    },1000);
+}
+
+function pauseTimer(){
+    clearInterval(interval);
+    interval = null;
+}
+
+function resetTimer(){
+    pauseTimer();
+    setMode(modeSelect.value);
+}
+
+function setMode(mode){
+    switch(mode){
+        case 'work': currentTime = workTime; break;
+        case 'short': currentTime = shortTime; break;
+        case 'long': currentTime = longTime; break;
+    }
+    updateDisplay();
+}
+
+modeSelect.addEventListener('change',()=>{ resetTimer(); });
+startBtn.addEventListener('click', startTimer);
+pauseBtn.addEventListener('click', pauseTimer);
+resetBtn.addEventListener('click', resetTimer);
+
+updateDisplay();
+</script>
+
+</body>
+</html>
+
 
