@@ -3,134 +3,244 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pomodoro Timer</title>
+<title>Markdown Editor Pro</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
 <style>
-    body {
-        margin:0; padding:0;
-        font-family: 'Poppins', sans-serif;
-        background: linear-gradient(135deg,#ff9a9e,#fad0c4);
-        display:flex; justify-content:center; align-items:center;
-        height:100vh; color:#333;
-    }
-    .container {
-        background: rgba(255,255,255,0.9);
-        padding:40px 50px;
-        border-radius:20px;
-        box-shadow:0 10px 25px rgba(0,0,0,0.2);
-        text-align:center;
-        width:300px;
-    }
-    h1 {
-        margin-bottom:20px;
-        font-size:28px;
-        color:#ff5e5e;
-    }
-    #timer {
-        font-size:60px;
-        margin:20px 0;
-        font-weight:700;
-    }
-    .buttons button {
-        padding:10px 20px;
-        margin:5px;
-        border:none;
-        border-radius:10px;
-        font-size:16px;
-        cursor:pointer;
-        font-weight:600;
-        transition:0.3s;
-    }
-    .buttons button:hover { opacity:0.8; }
-    .work { background:#ff5e5e; color:white; }
-    .short { background:#fbc531; color:white; }
-    .long { background:#4cd137; color:white; }
-    .control { background:#1e272e; color:white; }
-    select { margin-top:10px; padding:8px 12px; border-radius:8px; border:1px solid #ccc; }
+  :root {
+    --bg-light:#f0f2f5;
+    --bg-dark:#1e1e2f;
+    --text-light:#333;
+    --text-dark:#f0f2f5;
+    --accent:#4b6cb7;
+  }
+
+  body {
+    margin:0;
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg-light);
+    color: var(--text-light);
+    transition:0.3s;
+    display:flex;
+    flex-direction:column;
+    min-height:100vh;
+  }
+
+  body.dark {
+    background: var(--bg-dark);
+    color: var(--text-dark);
+  }
+
+  header {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:16px 24px;
+    background: var(--accent);
+    color:#fff;
+    font-size:20px;
+    font-weight:600;
+  }
+
+  .container {
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    padding:16px;
+    gap:12px;
+  }
+
+  .toolbar {
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+    margin-bottom:8px;
+  }
+
+  .toolbar button {
+    padding:6px 10px;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+    background:#4b6cb7;
+    color:white;
+    font-weight:600;
+    transition:0.2s;
+  }
+
+  .toolbar button:hover { opacity:0.85; }
+
+  .editor-preview {
+    display:flex;
+    flex:1;
+    gap:12px;
+    flex-wrap:wrap;
+  }
+
+  textarea {
+    flex:1;
+    padding:16px;
+    font-size:16px;
+    border-radius:10px;
+    border:1px solid #ccc;
+    resize:none;
+    min-height:60vh;
+    background:white;
+    color:#333;
+    flex-basis:48%;
+  }
+
+  body.dark textarea {
+    background:#2c2c3d;
+    color:#f0f2f5;
+    border:1px solid #555;
+  }
+
+  .preview {
+    flex:1;
+    padding:16px;
+    background:white;
+    border-radius:10px;
+    border:1px solid #ccc;
+    min-height:60vh;
+    overflow-y:auto;
+    flex-basis:48%;
+  }
+
+  body.dark .preview {
+    background:#2c2c3d;
+    border:1px solid #555;
+  }
+
+  .preview h1, .preview h2, .preview h3, .preview h4 { color:var(--accent);}
+  pre { background:#f5f5f5; padding:8px; border-radius:6px; overflow-x:auto;}
+  body.dark pre { background:#3a3a4f; }
+
+  .actions { margin-top:12px; display:flex; gap:12px; flex-wrap:wrap; }
+  .actions button { background:var(--accent); color:white; border:none; padding:8px 14px; border-radius:6px; cursor:pointer; font-weight:600; }
+
+  @media(max-width:900px){
+    .editor-preview { flex-direction:column; }
+    textarea, .preview { flex-basis:100%; }
+  }
 </style>
 </head>
 <body>
 
+<header>
+  Markdown Editor Pro
+  <button id="themeToggle">Dark Mode</button>
+</header>
+
 <div class="container">
-    <h1>Pomodoro Timer</h1>
-    <div>
-        <label for="mode">Mode:</label>
-        <select id="mode">
-            <option value="work">Work - 25 min</option>
-            <option value="short">Short Break - 5 min</option>
-            <option value="long">Long Break - 15 min</option>
-        </select>
-    </div>
-    <div id="timer">25:00</div>
-    <div class="buttons">
-        <button class="control" id="start">Start</button>
-        <button class="control" id="pause">Pause</button>
-        <button class="control" id="reset">Reset</button>
-    </div>
+
+  <div class="toolbar">
+    <button onclick="insertMarkdown('**','**')">Bold</button>
+    <button onclick="insertMarkdown('*','*')">Italic</button>
+    <button onclick="insertMarkdown('### ','')">H3</button>
+    <button onclick="insertMarkdown('- ','')">List</button>
+    <button onclick="insertMarkdown('[Link](url)','')">Link</button>
+    <button onclick="insertMarkdown('`','`')">Code</button>
+  </div>
+
+  <div class="editor-preview">
+    <textarea id="editor" placeholder="Type your markdown..."></textarea>
+    <div class="preview" id="preview"></div>
+  </div>
+
+  <div class="actions">
+    <button onclick="downloadMarkdown()">Download .MD</button>
+    <button onclick="downloadHTML()">Download HTML</button>
+    <button onclick="clearEditor()">Clear</button>
+  </div>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
 <script>
-let timerDisplay = document.getElementById('timer');
-let startBtn = document.getElementById('start');
-let pauseBtn = document.getElementById('pause');
-let resetBtn = document.getElementById('reset');
-let modeSelect = document.getElementById('mode');
+const editor = document.getElementById('editor');
+const preview = document.getElementById('preview');
+const themeToggle = document.getElementById('themeToggle');
 
-let workTime = 25*60; 
-let shortTime = 5*60; 
-let longTime = 15*60; 
+marked.setOptions({
+  breaks:true,
+  highlight: function(code) {
+    return hljs.highlightAuto(code).value;
+  }
+});
 
-let currentTime = workTime;
-let interval = null;
+function updatePreview(){
+  preview.innerHTML = marked.parse(editor.value);
+}
+editor.addEventListener('input', updatePreview);
 
-function updateDisplay(){
-    let minutes = Math.floor(currentTime/60).toString().padStart(2,'0');
-    let seconds = (currentTime%60).toString().padStart(2,'0');
-    timerDisplay.textContent = `${minutes}:${seconds}`;
+// Toolbar helper
+function insertMarkdown(start,end){
+  const startPos = editor.selectionStart;
+  const endPos = editor.selectionEnd;
+  const text = editor.value;
+  editor.value = text.substring(0,startPos) + start + text.substring(startPos,endPos) + end + text.substring(endPos);
+  editor.focus();
+  updatePreview();
 }
 
-function startTimer(){
-    if(interval) return;
-    interval = setInterval(()=>{
-        if(currentTime>0){
-            currentTime--;
-            updateDisplay();
-        } else {
-            clearInterval(interval);
-            interval = null;
-            alert('Time is up!');
-        }
-    },1000);
+// Dark / Light theme toggle
+themeToggle.addEventListener('click', ()=>{
+  document.body.classList.toggle('dark');
+  themeToggle.textContent = document.body.classList.contains('dark') ? 'Light Mode' : 'Dark Mode';
+});
+
+// Download markdown
+function downloadMarkdown(){
+  const blob = new Blob([editor.value], {type:'text/markdown'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href=url;
+  a.download='markdown.md';
+  a.click();
+  URL.revokeObjectURL(url);
 }
 
-function pauseTimer(){
-    clearInterval(interval);
-    interval = null;
+// Download HTML
+function downloadHTML(){
+  const htmlContent = `
+  <html><head><meta charset="UTF-8"><title>Markdown Export</title></head><body>${marked.parse(editor.value)}</body></html>`;
+  const blob = new Blob([htmlContent], {type:'text/html'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href=url;
+  a.download='markdown.html';
+  a.click();
+  URL.revokeObjectURL(url);
 }
 
-function resetTimer(){
-    pauseTimer();
-    setMode(modeSelect.value);
+// Clear editor
+function clearEditor(){
+  editor.value='';
+  updatePreview();
 }
 
-function setMode(mode){
-    switch(mode){
-        case 'work': currentTime = workTime; break;
-        case 'short': currentTime = shortTime; break;
-        case 'long': currentTime = longTime; break;
-    }
-    updateDisplay();
-}
+// Load sample content
+editor.value = `# Welcome to Markdown Editor Pro
 
-modeSelect.addEventListener('change',()=>{ resetTimer(); });
-startBtn.addEventListener('click', startTimer);
-pauseBtn.addEventListener('click', pauseTimer);
-resetBtn.addEventListener('click', resetTimer);
+Type your markdown here!
 
-updateDisplay();
+## Features
+- Bold, Italic, Headings
+- Lists, Links, Code
+- Dark / Light Mode
+- Download .MD or HTML
+
+\`\`\`javascript
+console.log('Hello Markdown');
+\`\`\`
+`;
+updatePreview();
 </script>
 
 </body>
 </html>
+
+
 
 
